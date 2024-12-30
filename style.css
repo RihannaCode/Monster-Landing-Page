@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(90deg, hsla(0, 87%, 79%, 1) 0%, hsla(6, 77%, 85%, 1) 100%);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+/* Navigation link styling */
+
+.nav-link {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    margin: 0 1rem;
+    font-size: 1rem;
+    color: #874CCC;
+    font-weight: 500;
+    opacity: 0.9;
+    transition: 0.3s;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #D862BC;
+    bottom: 0;
+    left: -5px;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #D862BC;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    opacity: 0.2;
+}
+
+.active {
+    background: linear-gradient(90deg, hsla(312, 77%, 86%, 1) 0%, hsla(220, 61%, 79%, 1) 100%);
+    color: #874CCC;
+    padding: 12px;
+    border-radius: 22px;
+    font-weight: bold;
+}
+
+
+/* Header section layout */
+
+.section_nav {
+    display: grid;
+    grid-template-columns: 18% 38% 25%;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px 0 #a987cf;
+    padding: 2rem;
+    border-bottom: 3px solid #874CCC;
+}
+
+.section_nav h3 {
+    font-family: "Lobster", serif;
+    color: #874CCC;
+}
+
+
+/* Left navigation styling */
+
+.left_nav {
+    height: 100%;
+}
+
+.box-img-log {
+    min-width: 20px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+
+/* Center navigation list layout */
+
+.center_nav ul {
+    justify-content: space-between;
+    height: 100%;
+}
+
+
+/* Right navigation */
+
+.right_nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.group_icon {
+    gap: 2.5rem;
+    display: flex;
+    margin-right: 2rem;
+}
+
+.group_icon i {
+    color: #874CCC;
+    font-size: 2rem;
+}
+
+
+/* Section styling */
+
+section {
+    min-height: 100vh;
+    padding: 0.75rem 12% 10rem;
+}
+
+
+/* Home section styling */
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15rem;
+}
+
+
+/* Home container styling */
+
+.home .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.anim-text {
+    font-family: "Lobster", serif;
+    color: #FF5580;
+    text-shadow: 2px 2px 2px #874CCC;
+    font-size: 6.75rem;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.home-image img {
+    animation: move 5s linear infinite;
+    position: relative;
+    width: 32vw;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.home .container .pt {
+    font-size: 1rem;
+    font-weight: 200;
+    line-height: 2;
+    max-width: 1000px;
+    text-align: justify;
+    color: #874CCC;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+}
+
+.active:hover {
+    transition: 2s;
+    color: #fff;
+}
+
+
+/* Animation for image movement */
+
+@keyframes move {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(50px);
+    }
+}
+
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+    .home {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .home .container {
+        padding: 0 1rem;
+    }
+    .home-image img {
+        width: 80vw;
+    }
+    .anim-text {
+        font-size: 5rem;
+    }
+    .section_nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 1rem;
+    }
+    .left_nav,
+    .right_nav {
+        display: flex;
+        align-items: center;
+    }
+    .home-image img {
+        width: 75vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        justify-content: center;
+        gap: 0;
+    }
+    .home .container {
+        text-align: center;
+        padding: 1rem 0;
+    }
+    .home-image img {
+        width: 90vw;
+        max-width: 100%;
+    }
+    .anim-text {
+        font-size: 3.5rem;
+    }
+    .home .container .pt {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 540px) {
+    .home .container {
+        padding: 0 0.5rem;
+    }
+    .home-image img {
+        width: 100vw;
+    }
+    .anim-text {
+        font-size: 2.5rem;
+    }
+    .center_nav {
+        display: none;
+    }
+    .group_icon i {
+        display: none;
+    }
+}
